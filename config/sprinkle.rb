@@ -88,7 +88,7 @@ package :git, :provides => :scm do
   apt 'git'
 end
 
-pacakge :libpq do
+package :libpq do
   description 'Need libpg for pg gem'
   apt 'libpq-dev'
 end
