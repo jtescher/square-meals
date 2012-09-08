@@ -28,6 +28,11 @@ group :assets do
   gem 'twitter-bootstrap-rails'
 end
 
+group :production do
+  gem 'unicorn'
+  gem 'capistrano-unicorn'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
@@ -44,3 +49,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+# Deployment
+gem 'capistrano'
