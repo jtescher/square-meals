@@ -88,6 +88,11 @@ package :git, :provides => :scm do
   apt 'git'
 end
 
+pacakge :libpq do
+  description 'Need libpg for pg gem'
+  apt 'libpq-dev'
+end
+
 # Policies
 
 # Associates the rails policy to the application servers. Contains rails, and surrounding
