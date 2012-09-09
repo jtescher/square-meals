@@ -30,6 +30,7 @@ gem 'jquery-rails'
 
 gem 'signet'
 gem 'awesome_print'
+gem 'redis'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
