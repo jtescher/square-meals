@@ -70,5 +70,9 @@ body {
 @media (max-width: 500px) {
     .restaurant {
         width: 100%;
+
+        h2 {
+            font-size: 25px;
+        }
     }
 }
