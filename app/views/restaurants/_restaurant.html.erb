@@ -16,4 +16,5 @@
                                 lat: restaurant['venue']['location']['lat'],
                                 lng: restaurant['venue']['location']['lng']),
                 class: 'menu-link' %>
+    <%= link_to 'Map', "https://maps.google.com/maps?q=#{restaurant['venue']['location']['lat']},#{restaurant['venue']['location']['lng']}", class: 'menu-link' %>
 </div>
