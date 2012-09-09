@@ -1,11 +1,12 @@
 class RestaurantsController < ApplicationController
   def index
     page = params[:page].to_i
+    section = params[:q] || 'food'
     start = page * 10
     finish = start + 10
     url = "https://api.foursquare.com/v2/venues/explore?" +
             "ll=#{params[:lat]},#{params[:lng]}" +
-            "&section=food" +
+            "&section=#{section}" +
             "&limit=50" +
             "&page=#{page}" +
             "&oauth_token=#{current_user}"
