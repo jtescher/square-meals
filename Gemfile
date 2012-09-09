@@ -27,6 +27,9 @@ end
 
 gem 'jquery-rails'
 
+gem 'signet'
+gem 'awesome_print'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -40,7 +43,7 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
 
 # Deployment
 gem 'capistrano'
