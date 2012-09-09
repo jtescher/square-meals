@@ -10,3 +10,7 @@
         - <%= restaurant['venue']['rating'] %></li>
     <% end %>
 </ul>
+<% if params[:page].to_i > 0 %>
+    <%= link_to 'Previous', restaurants_path(lat: params[:lat], lng: params[:lng], page: params[:page].to_i - 1) %>
+<% end %>
+<%= link_to 'Next', restaurants_path(lat: params[:lat], lng: params[:lng], page: params[:page].to_i + 1) %>

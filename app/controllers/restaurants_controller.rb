@@ -1,12 +1,16 @@
 class RestaurantsController < ApplicationController
   def index
+    page = params[:page].to_i
+    start = page * 10
+    finish = start + 10
     url = "https://api.foursquare.com/v2/venues/explore?" +
             "ll=#{params[:lat]},#{params[:lng]}" +
             "&section=food" +
-            "&limit=10" +
+            "&limit=50" +
+            "&page=#{page}" +
             "&oauth_token=#{current_user}"
     foursquare_json = HTTParty.get(url)
-    @restaurants = foursquare_json['response']['groups'][0]['items']
+    @restaurants = foursquare_json['response']['groups'][0]['items'][start..finish]
   end
 
   def show
