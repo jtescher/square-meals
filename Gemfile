@@ -23,6 +23,7 @@ end
 group :production do
   gem 'unicorn'
   gem 'capistrano-unicorn'
+  gem 'newrelic_rpm'
 end
 
 gem 'jquery-rails'
