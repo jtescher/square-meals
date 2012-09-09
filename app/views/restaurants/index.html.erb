@@ -1,6 +1,12 @@
 <h1>Restaurants</h1>
 <ul class="restaurants unstyled">
     <% @restaurants.each do |restaurant| %>
-      <li class='restaurant'><%= restaurant['venue']['name'] %> - <%= restaurant['venue']['rating'] %></li>
+      <li class='restaurant'>
+        <%= link_to restaurant['venue']['name'],
+                    restaurant_path('menu',
+                                    name: restaurant['venue']['name'],
+                                    lat: restaurant['venue']['location']['lat'],
+                                    lng: restaurant['venue']['location']['lng']) %>
+        - <%= restaurant['venue']['rating'] %></li>
     <% end %>
 </ul>

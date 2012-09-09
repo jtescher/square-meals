@@ -13,8 +13,8 @@ class RestaurantsController < ApplicationController
     name = params[:name]
     lat = params[:lat]
     lng = params[:lng]
-    
-    @venue_id = venue_id name, lat, lng
+
+    @venue_id = venue_id(name, lat, lng)
   end
 
   private
@@ -22,9 +22,10 @@ class RestaurantsController < ApplicationController
   def venue_id(name, lat, lng)
     url = "http://api.locu.com/v1_0/venue/search/?" +
             "name=#{name}" +
-            "&location=#{lat},#{lng}"
+            "&location=#{lat},#{lng}" +
+            "&api_key=3dda222999dbaf88ac2f518af360254d8656bc4e"
 
-    json_response = HTTParty.get(url)
+    json_response = HTTParty.get(URI.encode(url))
 
     json_response['objects'][0]['id']
   end
