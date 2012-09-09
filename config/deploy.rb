@@ -1,4 +1,5 @@
 require "bundler/capistrano"
+load "deploy/assets"
 
 # =============================================================================
 # REQUIRED VARIABLES
@@ -38,3 +39,4 @@ default_run_options[:pty] = true
 # end
 
 require 'capistrano-unicorn'
+set :unicorn_pid, '/srv/square-meals/shared/pids/unicorn.pid'
