@@ -10,4 +10,9 @@ class SessionsController < ApplicationController
     cookies.permanent[:auth_token] = response['access_token']
     redirect_to root_url
   end
+
+  def destroy
+    cookies.delete :auth_token
+    redirect_to root_url
+  end
 end
