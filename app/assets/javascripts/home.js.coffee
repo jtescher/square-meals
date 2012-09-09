@@ -4,7 +4,7 @@
 
 
 renderResults = (results) ->
-    $restaurantList = $('<ul class="restaurants unstyled"></ul>')
+    $restaurantList = $('<ul class="restaurants unstyled bjqs"></ul>')
     for restaurant in results
         $restaurant = $('<li class="restaurant"></li>')
         $restaurant.html(restaurant.venue.name)
