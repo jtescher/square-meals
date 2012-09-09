@@ -23,9 +23,9 @@
         <div class="nav-collapse">
           <ul class="nav">
             <% if current_user %>
-                <li><%= link_to "Logout", logout_path %></li>
                 <li><%= link_to "Restaurants", restaurants_path(lat: params[:lat], lng: params[:lng], q: 'food') %></li>
                 <li><%= link_to "Bars", restaurants_path(lat: params[:lat], lng: params[:lng], q: 'drinks') %></li>
+                <li><%= link_to "Logout", logout_path %></li>
             <% else %>
                 <li><%= link_to "Sign in with Foursquare", foursquare_auth_url %></li>
             <% end %>
