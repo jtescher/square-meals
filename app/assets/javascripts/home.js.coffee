@@ -3,34 +3,23 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 
-renderResults = (results) ->
-    $restaurantList = $('<ul class="restaurants unstyled bjqs"></ul>')
-    for restaurant in results
-        $restaurant = $('<li class="restaurant"></li>')
-        $restaurant.html(restaurant.venue.name)
-        $restaurantList.append($restaurant)
-    $('.loading-placeholder').replaceWith($restaurantList)
+redirectToLatLng = (position) ->
+    lat = position.coords.latitude
+    lng = position.coords.longitude
+    window.location.href = "/restaurants?lat=#{lat}&lng=#{lng}"
 
 
-getResultsNear = (lat, lng) ->
-    $.ajax
-        url: "/restaurants"
-        dataType: 'JSON'
-        data:
-            lat: lat
-            lng: lng
-        error: -> alert('Sorry something went wrong. Try again later.')
-        success: (data) ->
-            console.log data
-            renderResults(data.response.groups[0].items)
+geoError = ->
+    alert('This app requires geolocation')
 
 
 getRestaurants = ->
     if navigator.geolocation
-        navigator.geolocation.getCurrentPosition (pos) -> getResultsNear(pos.coords.latitude, pos.coords.longitude)
+        navigator.geolocation.getCurrentPosition redirectToLatLng, geoError
     else
-        alert('This app requires geolocation')
+        geoError()
+
 
 jQuery ->
-    if $('#restaurants').length
+    if $('#restaurants-container').length
         getRestaurants()

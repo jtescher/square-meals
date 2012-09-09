@@ -1,6 +1,6 @@
 <% if current_user %>
-    <div id="restaurants" data-fs-client-id='<%= ENV['FOURSQUARE_CLIENT_ID'] %>'>
-      <p class='loading-placeholder'>Loading...</p>
+    <div id="restaurants-container">
+        <p class='loading-placeholder'>Loading...</p>
     </div>
 <% else %>
     <%= link_to 'Sign in with Foursquare!', foursquare_auth_url, class: 'btn btn-primary' %>
