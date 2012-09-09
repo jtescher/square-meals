@@ -27,6 +27,6 @@ class RestaurantsController < ApplicationController
 
     json_response = HTTParty.get(URI.encode(url))
 
-    json_response['objects'][0]['id']
+    json_response['objects'][0]['id'] rescue nil
   end
 end
