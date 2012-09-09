@@ -14,3 +14,9 @@
 /log/*.log
 /tmp
 /config/database.yml
+
+# Mac stuff
+.DS_Store
+
+# Jetbrains
+.idea

@@ -1,4 +1,4 @@
-upstream app {
+upstream square-meals.info {
 	server unix:/tmp/square-meals.sock fail_timeout=0;
 }
 server {
@@ -35,7 +35,7 @@ server {
 	}
 
 	location @app {
-		proxy_pass http://app;
+		proxy_pass http://square-meals.info;
 	}
 
 	location = /favicon.ico {
