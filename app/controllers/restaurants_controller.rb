@@ -10,11 +10,11 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @name = params[:name]
-    @lat = params[:lat]
-    @lng = params[:lng]
+    name = params[:name]
+    lat = params[:lat]
+    lng = params[:lng]
     
-    @venue-id = venue_id name, lat, lng
+    @venue_id = venue_id name, lat, lng
   end
 
   private
