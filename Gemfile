@@ -19,11 +19,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
 end
+#gem 'newrelic_rpm'
 
 group :production do
   gem 'unicorn'
   gem 'capistrano-unicorn'
-  gem 'newrelic_rpm'
 end
 
 gem 'jquery-rails'
