@@ -10,12 +10,11 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @name = params[:name]
+    name = params[:name]
     lat = params[:lat]
     lng = params[:lng]
-    
-    @yelp_data = YelpRequest.try_to_find_restaurant_review(@name, lat, lng)
-    @venue_id = venue_id(@name, lat, lng)
+
+    @venue_id = venue_id(name, lat, lng)
   end
 
   private
