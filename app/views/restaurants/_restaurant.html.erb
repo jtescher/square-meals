@@ -1,0 +1,19 @@
+<div class='restaurant'>
+    <div class="top-right">
+      <div class="rating"><%= restaurant['venue']['rating'] || 0 %></div>
+      <p><%= restaurant['venue']['location']['distance'].to_i / 1000.0 %>km</p>
+    </div>
+    <h2><%= restaurant['venue']['name'] %></h2>
+    <h3><%= restaurant['venue']['location']['address'] %></h3>
+    <h3 class="category"><%= restaurant['venue']['categories'][0]['name'] %></h3>
+    <p class='friends'>
+    <%= restaurant['venue']['stats']['checkinsCount'] %> people have been here
+        [<%= restaurant['venue']['friendVisits']['count'] rescue 0 %> Friends]
+    </p>
+    <%= link_to 'Menu',
+                restaurant_path('menu',
+                                name: restaurant['venue']['name'],
+                                lat: restaurant['venue']['location']['lat'],
+                                lng: restaurant['venue']['location']['lng']),
+                class: 'menu-link' %>
+</div>
